@@ -1,0 +1,74 @@
+body 
+{
+    background-color: rgb(0, 0, 0);
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    overflow: hidden;
+}
+.container{
+    font-size: 10px;
+    width: 40em;
+    height: 40em;
+    position: relative;
+}
+.sol{
+    position: absolute;
+    width: 15em;
+    height: 15em;
+    top: 12.5em;
+    left: 12.5em;
+    background-color: rgb(255, 255, 0);
+    border-radius: 50%;
+    box-shadow: 0 0 3em rgb(226, 222, 170);
+}
+.terra,
+.lua{
+    position: absolute;
+    border-style: solid;
+    border-color: rgb(244, 246, 242) transparent transparent transparent ;
+    border-width: 0.1em 0.1em 0 0;
+    border-radius: 50%;
+}
+.terra{ 
+    top: 5em;
+    left: 5em;
+    width: 30em;
+    height: 30em;
+    animation: orbit 36.5s linear infinite;
+}
+.lua{ 
+    top: 0em;
+    right: 0em;
+    width: 8em;
+    height: 8em;
+    animation: orbit 2.7s linear infinite;
+
+}
+.terra::before, .lua::before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+}
+.terra::before{
+    top: 2.8em;
+    right: 2.8em;
+    width: 3em;
+    height: 3em;
+    background-color: rgb(69, 119, 213);
+}
+.lua::before{
+    top: 0.8em;
+    right: 0.2em;
+    width: 1.2em;
+    height: 1.2em;
+    background-color: #fdffff;
+}
+
+@keyframes orbit {
+    to{
+        transform: rotate(360deg)
+    }
+}
